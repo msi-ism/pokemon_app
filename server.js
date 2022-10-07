@@ -18,9 +18,8 @@ app.get('/', (req, res) => {
 // ^ Pokemon json route
 app.get('/pokemon', (req, res) => {
     // res.send(pokemon) // & this sends the data as json to the browser
-    res.render('./Index')
+    res.render('./Index', { pokemon: pokemon})
 })
-
 
 app.listen(PORT, () => {
     console.log(`Server is running on port: ${PORT}`)

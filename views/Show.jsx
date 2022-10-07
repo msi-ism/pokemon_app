@@ -5,6 +5,12 @@ class Show extends React.Component {
 		return ( 
             <div>
 			    <h1 style={styles.title} >Look at all these Pokemon!</h1>
+                <ul>
+                    <li>
+                        {' '}
+                        This is a <a href={`/pokemon/${idx}`}> {pokemon.name}</a>
+                    </li>
+                </ul>
             </div>
 			) 
 		} 
