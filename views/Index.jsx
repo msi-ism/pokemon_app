@@ -5,16 +5,18 @@ class Index extends React.Component {
     const { pokemon } = this.props
     return (
       <div>
-        <h1 style={styles.title}>Look at all these Pokemon!</h1>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/800px-International_Pok%C3%A9mon_logo.svg.png' width="300"></img>
+        <h1 style={styles.title}>Here are all the pokemon currently in the Pokedex!</h1>
         <ul>
             {pokemon.map((pokemon, idx) => (
-                <li key={idx}>
+                <li style={styles.p} key={idx}>
                     {" "}
-                    This is a <a href={`/pokemon/${idx}`}> {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</a>
+                    <a href={`/pokemon/${pokemon._id}`}> {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</a>
                 </li>
             ))
             }
         </ul>
+        <a style ={styles.h2} href='/pokemon/new'>Create New Pokemon!</a>
       </div>
     );
   }
@@ -23,8 +25,19 @@ class Index extends React.Component {
 module.exports = Index;
 
 const styles = {
-  title: {
-    fontFamily: "Helvetica",
-    fontSize: "30px",
-  },
-};
+    title: {
+        fontFamily: 'Helvetica',
+        fontSize: '30px'
+    },
+    h2: {
+        fontFamily: 'Helvetica',
+        fontSize: '22px'
+    },
+    li: {
+        listStyle: 'none'
+    },
+    p: {
+        fontFamily: 'Helvetica'
+    }
+
+    }
