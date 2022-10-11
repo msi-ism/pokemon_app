@@ -23,7 +23,9 @@ app.get('/pokemon', (req, res) => {
 
 app.get('/pokemon/:id', (req, res) => {
     // const { id } = req.params
-    res.send(req.params.id)
+    res.render('Show.jsx', {
+        pokemon: pokemon[req.params.id]
+    })
 })
 
 app.listen(PORT, () => {
